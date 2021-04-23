@@ -104,6 +104,7 @@ class SecondActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         currDate.set(Calendar.HOUR_OF_DAY, hourOfDay)
         currDate.set(Calendar.MINUTE, minute)
+        currDate.set(Calendar.SECOND, 0)
 
         tv_date.text = dateFormat.format(currDate.time)
     }

@@ -24,8 +24,14 @@ class AlarmReceiver : BroadcastReceiver() {
         )
 
         val mBuilder = NotificationCompat.Builder(context!!, channel_id)
+            .setSmallIcon(R.drawable.ic_baseline_directions_car_24)
             .setContentText("car arrive")
-            .setContentTitle("${SimpleDateFormat("dd/MM/yyyy", Locale.US).format(Calendar.getInstance().time)})")
+            .setContentTitle(
+                SimpleDateFormat(
+                    "dd/MM/yyyy",
+                    Locale.US
+                ).format(Calendar.getInstance().time)
+            )
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         val mNotificationManager = context
